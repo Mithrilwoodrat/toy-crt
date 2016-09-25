@@ -36,3 +36,22 @@ void puts(const char *str)
     size_t len = strlen(str);
     write(1, str, len);
 }
+
+int getchar() 
+{
+    char c;
+    if (read(0, &c, 1) == 1)
+        return 1;
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
