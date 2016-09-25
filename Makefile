@@ -2,6 +2,8 @@
 
 CC = gcc
 CCFLAGS = -c -fno-builtin -nostdlib
+SOURCES = entry.c stdio.c string.c stdlib.c
+OBJECTS = bin/stdio.o bin/string.o bin/stdlib.o
 
 all: init lib test
 
@@ -10,11 +12,11 @@ init:
 
 lib: build archive
 
-build: entry.c stdio.c string.c
+build: $(SOURCES)
 	$(CC) $(CCFLAGS) $^
 	mv *.o bin/
 
-archive: bin/stdio.o bin/string.o
+archive: $(OBJECTS)
 	ar -rs crt.a  $^
 
 test:

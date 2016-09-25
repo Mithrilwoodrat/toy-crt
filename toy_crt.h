@@ -16,13 +16,17 @@ typedef int FILE;
 #define stderr ((FILE *)2)
 
 int crt_io_init(void);
+int crt_heap_init(void);
 
 //from unistd.h
 int read(int fd, void *buffer, size_t size);
 int write(int fd, const void *buffer, size_t size);
 void puts(const char *str);
-
+int getchar(void);
 
 void itoa(int n, char s[]);
 size_t strlen(const char *str);
+
+#define NULL 0
+
 #endif
