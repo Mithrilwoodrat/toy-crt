@@ -19,6 +19,7 @@ int main(int argc,char * argv[])
 {
     test_puts();
     test_iota();
+    getchar();
     return 42;
 }
 
