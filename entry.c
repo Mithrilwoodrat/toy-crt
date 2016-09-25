@@ -3,12 +3,12 @@
 extern int main(int argc, char** argv);
 void _exit(int);
 
-static void die(char * msg) 
+void die(char * msg) 
 {
 //    printf("die on : %s", msg);
+    puts(msg);
     _exit(1);
 }
-
 /*
   in glibc /Sysdeps/X86_64/start.S
   This is the canonical entry point, usually the first thing in the text
@@ -79,10 +79,10 @@ void crt_entry(void)
     argc = *(int *) (ebp_reg + 4);
     argv = (char **) (ebp_reg + 8);
 
-    /*
+    
     if ( !crt_heap_init()){
         die("heap init failed!");
-        }*/
+    }
 
     if ( !crt_io_init()) {
         die("IO init failed!");
