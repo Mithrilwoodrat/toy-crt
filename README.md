@@ -1,6 +1,6 @@
 #toy-crt
 
-将《程序员的自我修养》中的 MiniCRT 移植到 X86_64，syscall 使用 GCC 内链汇编实现，使用 64 位 AMD 格式的 syscall 格式。
+将《程序员的自我修养》中的 MiniCRT 移植到 X86_64，syscall 使用 GCC 内联汇编实现，使用 64 位 AMD 格式的 syscall 格式。
 
 Under Development
 
