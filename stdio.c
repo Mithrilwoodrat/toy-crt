@@ -31,10 +31,16 @@ int read(int fd, void *buffer, size_t size)
     return ret;
 }
 
+void putchar(int c)
+{
+    write(1, &c, 1);
+}
+
 void puts(const char *str) 
 {
     size_t len = strlen(str);
     write(1, str, len);
+    putchar('\n');
 }
 
 int getchar() 
