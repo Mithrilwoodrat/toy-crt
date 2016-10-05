@@ -1,6 +1,6 @@
 #include "toy_crt.h"
 
-static const char *str = "Hello World!\n";
+static const char *str = "Hello World!";
 
 void test_puts()
 {
@@ -19,16 +19,15 @@ int main(int argc,char * argv[])
 {
     test_puts();
     test_iota();
+    puts("argc:");
+    putchar(argc + '0');
+    putchar('\n');
+    puts("argv:");
+    int i;
+	for (i = 0; i < argc; i++) {
+		puts(argv[i]);
+	}
     getchar();
     return 42;
 }
-
-
-
-
-
-
-
-
-
 
