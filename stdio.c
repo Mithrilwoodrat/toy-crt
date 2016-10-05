@@ -31,12 +31,15 @@ int read(int fd, void *buffer, size_t size)
     return ret;
 }
 
+void putchar(int c)
+{
+    write(1, &c, 1);
+}
+
 void puts(const char *str) 
 {
     size_t len = strlen(str);
     write(1, str, len);
-    const char newline = '\n';
-    write(1, &newline, 1);
 }
 
 int getchar() 
@@ -45,11 +48,5 @@ int getchar()
     if (read(0, &c, 1) == 1)
         return 1;
     return 0;
-}
-
-void putchar(char c)
-{
-    char *p = &c;
-    write(1, p, 1);
 }
 
