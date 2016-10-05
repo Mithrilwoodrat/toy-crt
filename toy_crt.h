@@ -23,6 +23,7 @@ int read(int fd, void *buffer, size_t size);
 int write(int fd, const void *buffer, size_t size);
 void puts(const char *str);
 int getchar(void);
+void putchar(char c);
 
 void itoa(int n, char s[]);
 size_t strlen(const char *str);

@@ -35,6 +35,8 @@ void puts(const char *str)
 {
     size_t len = strlen(str);
     write(1, str, len);
+    const char newline = '\n';
+    write(1, &newline, 1);
 }
 
 int getchar() 
@@ -45,13 +47,9 @@ int getchar()
     return 0;
 }
 
-
-
-
-
-
-
-
-
-
+void putchar(char c)
+{
+    char *p = &c;
+    write(1, p, 1);
+}
 
