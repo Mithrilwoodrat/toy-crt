@@ -76,8 +76,8 @@ void crt_entry(void)
     // on 64bit system use rbp instead of ebp
     asm volatile("movq %%rbp, %0 \n":"=r" (ebp_reg)); 
     
-    argc = *(int *) (ebp_reg + 4);
-    argv = (char **) (ebp_reg + 8);
+    argc = *(int *) (ebp_reg + 8);
+    argv = (char **) (ebp_reg + 16);
 
     
     if ( !crt_heap_init()){
