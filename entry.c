@@ -70,14 +70,12 @@ void crt_entry(void)
     int ret;
     int argc;
     char** argv;
-
-    char * ebp_reg = 0;
-
-    // on 64bit system use rbp instead of ebp
-    asm volatile("movq %%rbp, %0 \n":"=r" (ebp_reg)); 
     
-    argc = *(int *) (ebp_reg + 8);
-    argv = (char **) (ebp_reg + 16);
+    char * rbp_reg = 0;
+    // on 64bit system use rbp instead of ebp
+    asm volatile("movq %%rbp, %0 \n":"=m" (rbp_reg)); 
+    argc = *(int *) (rbp_reg + 8);
+    argv = (char **) (rbp_reg + 16);
 
     
     if ( !crt_heap_init()){
