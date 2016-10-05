@@ -26,9 +26,9 @@ int crt_heap_init(void);
 int read(int fd, void *buffer, size_t size);
 int write(int fd, const void *buffer, size_t size);
 void puts(const char *str);
-void putchar(int c);
-int getchar(void);
 void putchar(char c);
+int getchar(void);
+
 
 void itoa(int n, char s[]);
 size_t strlen(const char *str);
