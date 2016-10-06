@@ -35,9 +35,9 @@ int main(int argc,char * argv[])
     putchar('\n');
     puts("argv:");
     int i;
-	for (i = 0; i < argc; i++) {
-		puts(argv[i]);
-	}
+    for (i = 0; i < argc; i++) {
+        puts(argv[i]);
+    }
     getchar();
     return 42;
 }
